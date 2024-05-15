@@ -1,0 +1,34 @@
+.sidebar_wrapper {
+  width: 80px;
+  height: 100vh;
+  background-color: $primary-color;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  padding-block: 40px;
+  .site_logo {
+    i {
+      color: #fff;
+      font-size: 40px;
+    }
+  }
+  .tabs-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    li {
+      a {
+        font-size: 22px;
+        color: #fff;
+      }
+    }
+  }
+  &:hover {
+    ~ .container {
+      z-index: -1;
+    }
+  }
+}
