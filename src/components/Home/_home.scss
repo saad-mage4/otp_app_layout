@@ -108,7 +108,7 @@
   > div {
     border: 2px solid $primary-color;
     border-radius: 10px;
-    padding: 20px;
+    padding: 20px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -117,18 +117,33 @@
     @include responsive("mobile") {
       background: linear-gradient(-45deg, #6957e9 46%, #f1f1fb 10%);
     }
+    .toggles {
+      display: flex;
+      flex-direction: column;
+      row-gap: 5px;
+    }
   }
   .switch {
     display: inline-block;
     label {
       display: block;
-      width: 60px;
+      width: 80px;
       height: 20px;
       padding: 3px;
       border-radius: 15px;
       border: 2px solid #fff;
       cursor: pointer;
       transition: 0.3s;
+      position: relative;
+      &::before {
+        content: "Disabled";
+        position: absolute;
+        font-size: 14px;
+        color: #fff;
+        top: 1.5px;
+        right: 5px;
+        translate: 0 0;
+      }
       &::after {
         content: "";
         display: inherit;
@@ -144,8 +159,12 @@
       &:checked ~ label {
         border-color: #fff;
         &::after {
-          translate: 40px 0;
+          translate: 60px 0;
           background-color: #fff;
+        }
+        &::before {
+          content: "Enabled";
+          translate: -25px 0;
         }
       }
     }
