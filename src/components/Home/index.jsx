@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { MiniToggle } from "../ui";
 
 const Boxes = () => {
   const [check_v, setVerification] = useState("");
@@ -105,68 +106,29 @@ const Boxes = () => {
         {/* container 1 */}
         <div className={`order-varification ${check_v}`}>
           <h3>Order Varification</h3>
-          <div className="toggles">
-            <div className="toggle">
-              <span className="switch">
-                <input
-                  onChange={checkStateV}
-                  id="order-enb-dis"
-                  type="checkbox"
-                />
-                <label htmlFor="order-enb-dis"></label>
-              </span>
-            </div>
-            <div className="toggle">
-              <span className="switch">
-                <input id="order-auto" type="checkbox" />
-                <label htmlFor="order-auto"></label>
-              </span>
-            </div>
-          </div>
+          <MiniToggle
+            checkStateS={checkStateV}
+            enable="order-enb-dis"
+            auto="order-auto"
+          />
         </div>
         {/* container 2 */}
         <div className={`abandoned-cart ${check_a}`}>
           <h3>Abandoned Cart</h3>
-          <div className="toggles">
-            <div className="toggle">
-              <span className="switch">
-                <input
-                  onChange={checkStateA}
-                  id="abandoned-enb-dis"
-                  type="checkbox"
-                />
-                <label htmlFor="abandoned-enb-dis"></label>
-              </span>
-            </div>
-            <div className="toggle">
-              <span className="switch">
-                <input id="abandoned-auto" type="checkbox" />
-                <label htmlFor="abandoned-auto"></label>
-              </span>
-            </div>
-          </div>
+          <MiniToggle
+            checkStateS={checkStateA}
+            enable="abandoned-enb-dis"
+            auto="abandoned-auto"
+          />
         </div>
         {/* container 3 */}
         <div className={`order-shipment ${check_s}`}>
           <h3>Order Shipment</h3>
-          <div className="toggles">
-            <div className="toggle">
-              <span className="switch">
-                <input
-                  onChange={checkStateS}
-                  id="shipment-enb-dis"
-                  type="checkbox"
-                />
-                <label htmlFor="shipment-enb-dis"></label>
-              </span>
-            </div>
-            <div className="toggle">
-              <span className="switch">
-                <input id="shipment-auto" type="checkbox" />
-                <label htmlFor="shipment-auto"></label>
-              </span>
-            </div>
-          </div>
+          <MiniToggle
+            checkStateS={checkStateS}
+            enable="shipment-enb-dis"
+            auto="shipment-auto"
+          />
         </div>
       </div>
     </>
