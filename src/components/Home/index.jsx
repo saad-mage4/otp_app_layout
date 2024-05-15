@@ -71,6 +71,62 @@ const Boxes = () => {
           </div>
         </div>
       </div>
+      <div className="toggle-buttons">
+        {/* container 1 */}
+        <div className="order-varification">
+          <h3>Order Varification</h3>
+          <div className="toggles">
+            <div className="toggle">
+              <span className="switch">
+                <input id="order-enb-dis" type="checkbox" />
+                <label htmlFor="order-enb-dis"></label>
+              </span>
+            </div>
+            <div className="toggle">
+              <span className="switch">
+                <input id="order-auto" type="checkbox" />
+                <label htmlFor="order-auto"></label>
+              </span>
+            </div>
+          </div>
+        </div>
+        {/* container 2 */}
+        <div className="abandoned-cart">
+          <h3>Abandoned Cart</h3>
+          <div className="toggles">
+            <div className="toggle">
+              <span className="switch">
+                <input id="abandoned-enb-dis" type="checkbox" />
+                <label htmlFor="abandoned-enb-dis"></label>
+              </span>
+            </div>
+            <div className="toggle">
+              <span className="switch">
+                <input id="abandoned-auto" type="checkbox" />
+                <label htmlFor="abandoned-auto"></label>
+              </span>
+            </div>
+          </div>
+        </div>
+        {/* container 3 */}
+        <div className="order-shipment">
+          <h3>Order Shipment</h3>
+          <div className="toggles">
+            <div className="toggle">
+              <span className="switch">
+                <input id="shipment-enb-dis" type="checkbox" />
+                <label htmlFor="shipment-enb-dis"></label>
+              </span>
+            </div>
+            <div className="toggle">
+              <span className="switch">
+                <input id="shipment-auto" type="checkbox" />
+                <label htmlFor="shipment-auto"></label>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

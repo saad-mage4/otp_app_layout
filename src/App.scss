@@ -5,6 +5,19 @@ $font-Assistant: "Assistant", sans-serif;
 $bg-color: #f1f1fb;
 $primary-color: #6957e9;
 
+// mixin
+@mixin responsive($size) {
+  @if ($size == "mobile") {
+    @media (max-width: 786px) {
+      @content;
+    }
+  } @else if($size == "desktop") {
+    @media (min-width: 786.1px) {
+      @content;
+    }
+  }
+}
+
 *,
 ::before,
 ::after {
@@ -30,6 +43,9 @@ main {
 .container {
   max-width: calc(1679px - 80px);
   height: 100vh;
+  @include responsive("mobile") {
+    height: auto;
+  }
   width: 100%;
   background-color: $bg-color;
   margin-left: auto;
