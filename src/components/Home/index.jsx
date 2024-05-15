@@ -1,4 +1,34 @@
+import { useState } from "react";
+
 const Boxes = () => {
+  const [check_v, setVerification] = useState("");
+  const [check_a, setAbandoned] = useState("");
+  const [check_s, setShipment] = useState("");
+
+  const checkStateV = (e) => {
+    if (e.target.checked) {
+      setVerification("active");
+    } else {
+      setVerification("");
+    }
+  };
+
+  const checkStateA = (e) => {
+    if (e.target.checked) {
+      setAbandoned("active");
+    } else {
+      setAbandoned("");
+    }
+  };
+
+  const checkStateS = (e) => {
+    if (e.target.checked) {
+      setShipment("active");
+    } else {
+      setShipment("");
+    }
+  };
+
   return (
     <>
       <div className="grid-boxes" style={{ "--boxWidth": `${280}px` }}>
@@ -73,12 +103,16 @@ const Boxes = () => {
       </div>
       <div className="toggle-buttons">
         {/* container 1 */}
-        <div className="order-varification">
+        <div className={`order-varification ${check_v}`}>
           <h3>Order Varification</h3>
           <div className="toggles">
             <div className="toggle">
               <span className="switch">
-                <input id="order-enb-dis" type="checkbox" />
+                <input
+                  onChange={checkStateV}
+                  id="order-enb-dis"
+                  type="checkbox"
+                />
                 <label htmlFor="order-enb-dis"></label>
               </span>
             </div>
@@ -91,12 +125,16 @@ const Boxes = () => {
           </div>
         </div>
         {/* container 2 */}
-        <div className="abandoned-cart">
+        <div className={`abandoned-cart ${check_a}`}>
           <h3>Abandoned Cart</h3>
           <div className="toggles">
             <div className="toggle">
               <span className="switch">
-                <input id="abandoned-enb-dis" type="checkbox" />
+                <input
+                  onChange={checkStateA}
+                  id="abandoned-enb-dis"
+                  type="checkbox"
+                />
                 <label htmlFor="abandoned-enb-dis"></label>
               </span>
             </div>
@@ -109,12 +147,16 @@ const Boxes = () => {
           </div>
         </div>
         {/* container 3 */}
-        <div className="order-shipment">
+        <div className={`order-shipment ${check_s}`}>
           <h3>Order Shipment</h3>
           <div className="toggles">
             <div className="toggle">
               <span className="switch">
-                <input id="shipment-enb-dis" type="checkbox" />
+                <input
+                  onChange={checkStateS}
+                  id="shipment-enb-dis"
+                  type="checkbox"
+                />
                 <label htmlFor="shipment-enb-dis"></label>
               </span>
             </div>
