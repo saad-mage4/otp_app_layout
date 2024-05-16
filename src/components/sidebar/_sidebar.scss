@@ -28,6 +28,49 @@
         color: #fff;
       }
     }
+    &.app-settings {
+      margin-top: auto;
+      margin-bottom: 80px;
+      li {
+        position: relative;
+        .colors-box {
+          display: none;
+          position: absolute;
+          min-height: 120px;
+          width: 50px;
+          border-radius: 5px;
+          top: -120px;
+          left: 55px;
+          background-color: #fff;
+          border: 2px solid #000;
+          i {
+            &.black {
+              color: #000;
+            }
+            &.red {
+              color: $disbled-color;
+            }
+            &.green {
+              color: $enabled-color;
+            }
+            &.purple {
+              color: #6957e9;
+            }
+          }
+        }
+        a {
+          &.active {
+            ~ .colors-box {
+              display: flex;
+              flex-direction: column;
+              gap: 5px;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
   }
   &:hover {
     ~ .container {
