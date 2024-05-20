@@ -78,6 +78,10 @@ main {
     border-radius: 5px;
     color: #000;
   }
+  @include responsive("mobile") {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 @import "./components/Home/home";
