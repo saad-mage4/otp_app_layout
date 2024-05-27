@@ -106,17 +106,18 @@
   gap: 10px;
   padding-inline: 20px;
   > div {
-    border: 2px solid $disbled-color;
+    border: 2px solid $primary-color;
     border-radius: 10px;
     padding: 20px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
-    background: linear-gradient(-45deg, $disbled-color 50%, #fff 10%);
-    @include responsive("mobile") {
-      background: linear-gradient(-45deg, $disbled-color 46%, #fff 10%);
-    }
+    background-color: #fff;
+    // background: linear-gradient(-45deg, $disbled-color 40%, #fff 10%);
+    // @include responsive("mobile") {
+    //   background: linear-gradient(-45deg, $disbled-color 48%, #fff 10%);
+    // }
     .toggles {
       display: flex;
       flex-direction: column;
@@ -131,7 +132,8 @@
       height: 20px;
       padding: 3px;
       border-radius: 15px;
-      border: 2px solid #fff;
+      // border: 2px solid $primary-color;
+      background-color: $disbled-color;
       cursor: pointer;
       transition: 0.3s;
       position: relative;
@@ -139,6 +141,7 @@
         content: "Disabled";
         position: absolute;
         font-size: 14px;
+        color: $primary-color;
         color: #fff;
         top: 1.5px;
         right: 5px;
@@ -157,7 +160,8 @@
     input {
       display: none;
       &:checked ~ label {
-        border-color: #fff;
+        // border-color: #fff;
+        background-color: $enabled-color;
         &::after {
           translate: 60px 0;
           background-color: #fff;
@@ -170,7 +174,7 @@
     }
   }
   h3 {
-    color: $disbled-color;
+    color: $primary-color;
     font-size: 22px;
     @include responsive("mobile") {
       font-size: 16px;
@@ -180,11 +184,18 @@
   .abandoned-cart,
   .order-shipment {
     &.active {
-      background: linear-gradient(-45deg, $enabled-color 50%, #fff 10%);
-      border-color: $enabled-color;
+      // background: linear-gradient(-45deg, $enabled-color 40%, #fff 10%);
+      // border-color: $enabled-color;
       h3 {
-        color: $enabled-color;
+        // color: $enabled-color;
       }
     }
   }
+}
+
+.graph-container {
+  max-width: 800px;
+}
+canvas {
+  width: 100% !important;
 }

@@ -1,10 +1,17 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { MiniToggle } from "../ui";
+import { Chart as ChartJS } from "chart.js/auto";
+import { Bar } from "react-chartjs-2";
 
-const Boxes = () => {
+const Home = () => {
   const [check_v, setVerification] = useState("");
   const [check_a, setAbandoned] = useState("");
   const [check_s, setShipment] = useState("");
+
+  // const options = {
+  //   maintainAspectRatio : true
+  // }
 
   const checkStateV = (e) => {
     if (e.target.checked) {
@@ -131,7 +138,40 @@ const Boxes = () => {
           />
         </div>
       </div>
+      <div className="graph-container">
+        <Bar
+          data={{
+            labels: [
+              "May-20",
+              "May-21",
+              "May-22",
+              "May-23",
+              "May-24",
+              "May-25",
+              "May-26",
+            ],
+            datasets: [
+              {
+                label: "Calls",
+                data: [100, 50, 200],
+                borderColor: "#36A2EB",
+                backgroundColor: "#9BD0F5",
+              },
+              {
+                label: "Messages",
+                data: [80, 100, 250],
+              },
+              {
+                label: "Emails",
+                data: [100, 200, 100],
+                borderColor: "#FF6384",
+                backgroundColor: "#FFB1C1",
+              },
+            ],
+          }}
+        />
+      </div>
     </>
   );
 };
-export default Boxes;
+export default Home;
